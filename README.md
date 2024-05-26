@@ -1,23 +1,15 @@
-# מטלה 2 - גרפים והעמסת אופרטורים
+ID: 214173957
+Email: nevobiton0@gmail.com
+# Assignment 2 - Graph and Operators overloading
+in this assigment, as following to assignment 1, I was asked to make exclusive oprators that will work with the Graph class, I created the action operators: +, -, +=, -=, ++(pre and post), --(pre and post), *, *=, <<. and I created also the comparison operatos: <, >, <=, >=, ==, !=.
 
-במטלה הקודמת מימשתם את המחלקה `Graph.cpp` המאפשרת ייצוג של גרפים בעזרת מטריצת שכנויות. במטלה הזאת, אתם תרחיבו את המחלקה ותוסיפו תמיכה באופרטורים חשבוניים על גרפים.
-כאמור, הגרפים מיוצגים בעזרת מטריצת שכנויות, לכן כל האופרטורים צריכים להיות חוקיים עבור מטריצות (כמו שלמדתם בקורס אלגברה לינארית).
+Every operator function got the args it needed, (+ two graphes, ++ one graph and so on), most of the action operators were simply just traversing the graph and making the action, it I was needing to plus 2 graphs, I Created new Graph and initialized his adjacency matrix in the place of[i][j] be the first graph in[i][j] + second graph in [i][j]. Same was done with a number add or ++ add. The actions operators were quite simple and intuitive to code. the * operator was just matrix multiplication and returning the new matrix. And finally, now a user can use my graph class as regular primitive type and use simple actions like plus or minus with it.
 
-אתם תצטרכו להוסיף את האופרטורים הבאים:
+My way of thinking in related to the comparison operators was to depend on former comparison operators I have already written.
+For instance, the == operator was just traversing through both the graph and check if first[i][j] == second[i][j] for every i and j (within the graphs vertices amount). After creating the == operator, Creating the != was simple, it returns the opposite that == returns. That usage of former operators reallt simplified the coding. same as >= after writing > and ==. 
+Writing the >,< operators was just following the definition, firstly I checked if the graphes are equal, if yes return false. after that I traverse through the graph and checked if every edge of the alledgly smaller graph is in the larger graph (to check if its contained in the graph), if yes, return true. if No, just check if the larger one has more edges or vertices than the smaller one, if yes return true.
 
-- שישה אופרטורים חשבוניים: חיבור (+) הוספה (+=) פלוס אונרי (+), ושלושת האופרטורים המקבילים לחיסור (-). כאמור, חיבור/חיסור של שתי מטריצות מוגדר רק על מטריצות מאותו סדר גודל nXn. ניסיון לחבר/לחסר שתי מטריצות שלא מקיימות תנאי זה יגרום לזריקת שגיאה.
-- שישה אופרטורי השוואה: גדול, גדול-או-שווה, קטן, קטן-או-שווה, שווה, לא-שווה. לשם מטלה זו כללי השוואת גרפים הם כדלקמן:
+making the <= was just asking if (g1 == g2 || g1 < g2), which is the definition of <= (same with opposite direction).
+And finnaly creating the output operator, it prints the adjacency matrix of the graph to a ostream provided.
 
-  1. גרפים G1 ו-G2 ייקראו שווים אם הם מאותו סדר גודל ומכילים את אותן הצלעות (והמשקלים של הצלעות זהים) או אם G1 לא גדול מ-G2 וגם G2 לא גדול מ-G1.
-  2. גרף G2 גדול מגרף G1 אם הגרף G1 מוכל ממש בגרף G2. אם אף גרף לא מוכל ממש בשני והגרפים לא שווים, אז גרף G2 גדול מגרף G1 אם מספר הצלעות ב-G2 גדול ממספר הצלעות ב-G1. אם בכל זאת מספר הצלעות זהה, אז הגרף G2 גדול מהגרף G1 אם המטריצה המייצגת של G2 בעלת סדר גודל גבוה יותר משל G1.
-
-- הגדלה ב-1 (++) והקטנה ב-1 (--) לפני ואחרי המספר. פעולה זו תגדיל או תקטין ב-1 את כל המשקלים של הצלעות בגרף.
-- הכפלה בסקלר שלם (`int`) - מכפיל את המשקל של כל הצלעות.
-- הכפלת גרפים - אנחנו מגדירים את פעולת הכפל בין גרף G1 לגרף G2 על ידי מכפלה של המטריצות המייצגות של שני הגרפים. התוצאה צריכה להיות מטריצה המייצגת גרף. ניסיון לבצע כפל בין גרפים בגדלים שונים צריך לזרוק שגיאה.
-- אופרטור פלט - הדפסה הגיונית של הגרף (צורת ההפדסה היא לשיקולכם).
-
-
-כמו כן, עליכם לכלול גם את הקובץ `Algorithms.cpp` מהמטלה הקודמת ולראות כיצד הפונקציות שהגדרתם בפעם הקודמת משתנות עכשיו. בנוסף לקבצים של המטלה אתם נדרשים להגיש גם קובץ README המתאר את אופן המימוש ואת החלוקה שביצעתם בקוד (סוג של מדריך משתמש).
-עליכם לכתוב בתחילת כל קובץ את מספר תעודת הזהות שלכם ואת המייל. אי עמידה בהנחיות תגרור הפחתה בציון.
-בהצלחה!
-
+After making all these operators I find their usage really helpful, Now my Graph class can be used simply without needing to iterate it every time.
