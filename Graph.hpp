@@ -25,10 +25,12 @@ namespace ariel
             size_t getDimension(); // returns the dimension of the squared adjacency matrix of the graph.
 
             friend Graph operator+(const Graph& mat, int x);
+            friend Graph operator+(); //unary
             friend Graph operator+(const Graph &first,const Graph &second );
             friend Graph operator+=(Graph mat, int x);
 
             friend Graph operator-(const Graph& mat, int x);
+            friend Graph operator-(); //unary
             friend Graph operator-(const Graph &first,const Graph &second );
             friend Graph operator-=(Graph &mat, int x);
 
