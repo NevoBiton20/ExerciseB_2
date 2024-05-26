@@ -152,15 +152,6 @@ namespace ariel
         }
         return mat;
     }
-    Graph operator+(Graph &mat)
-    {
-        return mat*1;
-    }
-
-    Graph operator-(Graph &mat)
-    {
-        return mat*=(-1);
-    }
     Graph operator-(const Graph &mat, int x)
     {
         if(mat.AMat == NULL)
@@ -540,5 +531,14 @@ namespace ariel
         }
         os<<"\n";
         return os;
+    }
+    Graph operator+(Graph &mat)
+    {
+        return mat*1;
+    }
+
+    Graph operator-(Graph &mat)
+    {
+        return mat*=(-1);
     }
 }
