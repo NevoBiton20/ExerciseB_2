@@ -460,7 +460,19 @@ namespace ariel
     }
     Graph operator/=(Graph &mat, int x)
     {
-        return mat*=1/x;
+        if(mat.AMat == NULL)
+        {
+            exit(EXIT_FAILURE);
+        }
+        int size = mat.vertices;
+        for(int i = 0; i < size; ++i) 
+        {
+            for (int j = 0; j < size; ++j) 
+            {
+                mat.AMat[i][j] /= x;
+            }
+        }
+        return mat;
     }
     Graph operator*(const Graph &first,const Graph &second)
     {
