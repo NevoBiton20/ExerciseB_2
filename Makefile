@@ -1,6 +1,6 @@
 #!make -f
-// ID: 214173957
-// Email: nevobiton0@gmail.com
+# ID: 214173957
+# Email: nevobiton0@gmail.com
 
 CXX=clang++-14
 CXXFLAGS=-std=c++2a -Werror -Wsign-conversion
