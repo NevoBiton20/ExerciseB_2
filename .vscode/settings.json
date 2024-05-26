@@ -1,0 +1,22 @@
+{
+    "files.associations": {
+        "array": "cpp",
+        "chrono": "cpp",
+        "compare": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "memory": "cpp",
+        "string_view": "cpp",
+        "thread": "cpp",
+        "tuple": "cpp",
+        "iostream": "cpp",
+        "iosfwd": "cpp",
+        "*.tcc": "cpp",
+        "cstddef": "cpp",
+        "iomanip": "cpp",
+        "istream": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp"
+    }
+}
