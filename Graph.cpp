@@ -29,6 +29,18 @@ namespace ariel
             }
         }
         this->vertices = Rows;
+        int edges=0;
+        for(int i=0;i<this->vertices;i++)
+        {
+            for(int j = 0;j<this->vertices;j++)
+            {
+                if(this->AMat[i][j])
+                {
+                    edges++;
+                }
+            }
+        }
+        this->edges = edges;
     }
 
     void Graph::printGraph()
