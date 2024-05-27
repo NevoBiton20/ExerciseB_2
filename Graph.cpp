@@ -534,7 +534,7 @@ namespace ariel
     }
     Graph operator+(Graph &mat)
     {
-        return mat*1;
+        return mat*=1;
     }
 
     Graph operator-(Graph &mat)
